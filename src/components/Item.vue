@@ -10,6 +10,6 @@ export default {
 </script>
 <style scoped>
 p {
-  margin-left: 50px;
+  margin-left: 150px;
 }
 </style>
