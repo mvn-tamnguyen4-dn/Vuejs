@@ -35,7 +35,6 @@
 <script>
 export default {
   name: "Form",
-  props: ["listItem"],
   data() {
     return {
       name: "",
@@ -52,8 +51,7 @@ export default {
         status: this.status,
         content: this.content
       };
-      this.listItem.unshift(item);
-      this.$emit("updateList", this.listItem);
+      this.$emit("sendItem", item);
     }
   }
 };

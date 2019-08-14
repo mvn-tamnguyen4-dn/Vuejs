@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Form :listItem="listItem" @updateList="listItem = $event"></Form>
-    <List v-bind:listItem="listItem"></List>
+    <Form :listItem="listItem" @sendItem="pushItem"></Form>
+    <List :listItem="listItem"></List>
   </div>
 </template>
 
@@ -19,6 +19,11 @@ export default {
     return {
       listItem: []
     };
+  },
+  methods: {
+    pushItem(item) {
+      this.listItem.unshift(item);
+    }
   }
 };
 </script>

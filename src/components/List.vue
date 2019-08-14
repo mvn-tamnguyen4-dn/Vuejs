@@ -1,17 +1,19 @@
 <template>
   <div>
-    <h1>Danh sách</h1>
-    <ul>
-      <li
-        v-for="item in listItem"
-        v-bind:key="item.id"
-      >{{ item.name }} đã {{ item.status }} {{ item.money }} VND. Nội dung: {{ item.content }}</li>
-    </ul>
+    <h2>Danh sach</h2>
+    <div v-for="item in listItem" :key="item.id">
+      <Item :item="item"></Item>
+    </div>
   </div>
 </template>
 <script>
+import Item from "./Item.vue";
+
 export default {
   name: "List",
-  props: ["listItem"]
+  props: ["listItem"],
+  components: {
+    Item
+  }
 };
 </script>
