@@ -29,4 +29,12 @@ export default {
 </script>
 
 <style>
+h2 {
+  color: blue;
+  text-align: center;
+}
+#app {
+  width: 50%;
+  margin: auto;
+}
 </style>

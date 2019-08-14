@@ -1,5 +1,5 @@
 <template>
-  <p>{{ item.name }} đã {{ item.status }} {{ item.money }} VND. Nội dung: {{ item.content }}</p>
+  <p>{{ item.name }} has {{ item.status }} {{ item.money }} VND with content "{{ item.content }}"</p>
 </template>
 
 <script>
@@ -8,3 +8,8 @@ export default {
   props: ["item"]
 };
 </script>
+<style scoped>
+p {
+  margin-left: 50px;
+}
+</style>

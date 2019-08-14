@@ -1,34 +1,34 @@
 <template>
-  <div>
-    <h1>Nhập thông tin</h1>
-    <table>
+  <div class="form">
+    <h2 class="title-form">Input infomation</h2>
+    <table class="table-form">
       <tr>
-        <td>Tên</td>
+        <td>Name</td>
         <td>
           <input type="text" name="name" id="name" v-model="name" />
         </td>
       </tr>
       <tr>
-        <td>Số tiền</td>
+        <td>Money</td>
         <td>
           <input type="text" name="money" id="money" v-model="money" />
         </td>
       </tr>
       <tr>
-        <td>Trạng thái</td>
+        <td>Status</td>
         <td>
-          <input type="radio" name="status" value="nhận" v-model="status" />Nhận
-          <input type="radio" name="status" value="gửi" v-model="status" />Gửi
+          <input type="radio" name="status" value="recieved" v-model="status" />Recieve
+          <input type="radio" name="status" value="sent" v-model="status" />Send
         </td>
       </tr>
       <tr>
-        <td>Nội dung</td>
+        <td>Content</td>
         <td>
           <input type="text" name="content" id="content" v-model="content" />
         </td>
       </tr>
     </table>
-    <button @click="addInfo">Xác nhận</button>
+    <button @click="addInfo" class="btn-submit">Submit</button>
   </div>
 </template>
 
@@ -56,3 +56,27 @@ export default {
   }
 };
 </script>
+<style scoped>
+.form {
+  border-style: ridge;
+}
+.table-form {
+  width: 50%;
+  margin: auto;
+}
+td {
+  padding: 10px 5px;
+}
+.btn-submit {
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  background-color: green;
+  border-radius: 5px;
+  color: aliceblue;
+  padding: 5px 10px;
+}
+input {
+  border-radius: 5px;
+}
+</style>

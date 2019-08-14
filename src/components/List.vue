@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h2>Danh sach</h2>
-    <div v-for="item in listItem" :key="item.id">
+  <div class="list">
+    <h2 class="title-list">List</h2>
+    <div v-for="item in listItem" :key="item.id" class="item-list">
       <Item :item="item"></Item>
     </div>
   </div>
