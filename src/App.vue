@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Form :listItem="listItem" @sendItem="pushItem"></Form>
+    <List :listItem="listItem"></List>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Form from "./components/Form.vue";
+import List from "./components/List.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    Form,
+    List
+  },
+  data: function() {
+    return {
+      listItem: []
+    };
+  },
+  methods: {
+    pushItem(item) {
+      this.listItem.unshift(item);
+    }
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h2 {
+  color: blue;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+#app {
+  width: 50%;
+  margin: auto;
 }
 </style>
