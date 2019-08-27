@@ -1,33 +1,55 @@
 <template>
   <Dialog>
     <h3 slot="header">Login</h3>
-    <form slot="body">
+    <div slot="body">
       <table>
         <tr>
           <th>Username</th>
           <td>
-            <input type="text" />
+            <input type="text" v-model="login.username" />
           </td>
         </tr>
         <tr>
           <th>Password</th>
           <td>
-            <input type="password" name="password" id="password" />
+            <input type="password" v-model="login.password" />
           </td>
         </tr>
       </table>
-      <button type="submit">Submit</button>
-    </form>
+      <button type="submit" @click="getLogin">Submit</button>
+    </div>
   </Dialog>
 </template>
 
 <script>
 import Dialog from "./Dialog.vue";
-
 export default {
   name: "Signin",
+  data() {
+    return {
+      login: {
+        username: "",
+        password: ""
+      },
+      isLogin: false
+    };
+  },
   components: {
     Dialog
+  },
+  methods: {
+    getLogin() {
+      var user = this.$parent.user.find(
+        x =>
+          x.username == this.login.username && x.password == this.login.password
+      );
+      if (user) {
+        this.isLogin = true;
+      } else {
+        this.isLogin = false;
+      }
+      console.log(this.isLogin);
+    }
   }
 };
 </script>
